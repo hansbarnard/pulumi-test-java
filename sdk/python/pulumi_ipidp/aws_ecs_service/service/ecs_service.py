@@ -8,8 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from ... import _utilities
-from ...code_deploy import _aws_ecs_service.blue_green.CodeDeploy
-from ...ecr_image import EcrImage
+# from ...code_deploy import _aws_ecs_service.blue_green.CodeDeploy
+from .ecr_image import EcrImage
 
 __all__ = ['EcsServiceArgs', 'EcsService']
 
