@@ -1,0 +1,22 @@
+{
+    "name": "@pulumi/ipidp",
+    "version": "${VERSION}",
+    "repository": "https://yyyyy.xxxx.com/xxx/pulumi-ipidp",
+    "scripts": {
+        "build": "tsc",
+        "install": "node scripts/install-pulumi-plugin.js resource ipidp ${VERSION}"
+    },
+    "dependencies": {
+        "@pulumi/aws": "^5.0.0",
+        "@pulumi/pulumi": "^3.42.0"
+    },
+    "devDependencies": {
+        "@types/node": "^14",
+        "typescript": "^3.7.0"
+    },
+    "pulumi": {
+        "resource": true,
+        "name": "ipidp",
+        "server": "https://yyyy.xxxxx.io/artifactory/sp-docker/pulumi-ipidp-provider"
+    }
+}
