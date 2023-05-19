@@ -56,9 +56,7 @@
                 "aws_ecs_service/service": "awsecsservice.service"
             },
             "dependencies": {
-                "com.pulumi:aws": "5.40.0",
-                "com.pulumi:docker": "4.2.0",
-                "com.pulumi:datadog": "4.17.1"
+                "com.pulumi:aws": "5.40.0"
             }
         },
         "csharp": {
@@ -70,9 +68,7 @@
             },
             "packageReferences": {
                 "Pulumi": "3.*",
-                "Pulumi.Aws": "5.*",
-                "Pulumi.Datadog": "4.*",
-                "Pulumi.Docker": "4.*"
+                "Pulumi.Aws": "5.*"
             }
         },
         "go": {
@@ -81,9 +77,7 @@
         },
         "nodejs": {
             "dependencies": {
-                "@pulumi/aws": "^5.0.0",
-                "@pulumi/docker": "^4.0.0",
-                "@pulumi/datadog": "^4.0.0"
+                "@pulumi/aws": "^5.0.0"
             },
             "devDependencies": {
                 "typescript": "^3.7.0"
@@ -92,9 +86,7 @@
         "python": {
             "requires": {
                 "pulumi": ">=3.0.0,<4.0.0",
-                "pulumi-aws": ">=5.0.0,<6.0.0",
-                "pulumi-docker": ">=4.0.0,<5.0.0",
-                "pulumi-datadog": ">=4.0.0,<5.0.0"
+                "pulumi-aws": ">=5.0.0,<6.0.0"
             }
         }
     },
