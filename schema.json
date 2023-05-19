@@ -48,7 +48,7 @@
     },
     "language": {
         "java": {
-            "basePackage": "com.clarivate",
+            "basePackage": "com.mycompany",
             "packages": {
                 "aws_ecs_service": "awsecsservice",
                 "aws_ecs_service/blue_green": "awsecsservice.bluegreen",
