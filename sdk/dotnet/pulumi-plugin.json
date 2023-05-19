@@ -1,0 +1,5 @@
+{
+  "resource": true,
+  "name": "ipidp",
+  "server": "https://yyyy.xxxxx.io/artifactory/sp-docker/pulumi-ipidp-provider"
+}
