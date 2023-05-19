@@ -1,0 +1,103 @@
+{
+    "name": "ipidp",
+    "description": "Some description",
+    "types": {
+    },
+    "resources": {
+        "ipidp:aws_ecs_service/service:EcrImage": {
+            "isComponent": true,
+            "inputProperties": {
+            },
+            "requiredInputs": [
+            ],
+            "properties": {
+            },
+            "required": [
+            ]
+        },
+        "ipidp:aws_ecs_service/blue_green:CodeDeploy": {
+            "isComponent": true,
+            "inputProperties": {
+            },
+            "requiredInputs": [
+            ],
+            "properties": {
+            },
+            "required": [
+            ]
+        },
+        "ipidp:aws_ecs_service/service:EcsService": {
+            "isComponent": true,
+            "inputProperties": {
+            },
+            "requiredInputs": [
+            ],
+            "properties": {
+                "ecrImage": {
+                  "$ref": "#/resources/ipidp:aws_ecs_service/service:EcrImage",
+                  "description": ""
+                },
+                "codeDeploy": {
+                  "$ref": "#/resources/ipidp:aws_ecs_service/blue_green:CodeDeploy",
+                  "description": ""
+                }
+            },
+            "required": [
+            ]
+        }
+    },
+    "language": {
+        "java": {
+            "basePackage": "com.clarivate",
+            "packages": {
+                "aws_ecs_service": "awsecsservice",
+                "aws_ecs_service/blue_green": "awsecsservice.bluegreen",
+                "aws_ecs_service/datadog": "awsecsservice.datadog",
+                "aws_ecs_service/service": "awsecsservice.service"
+            },
+            "dependencies": {
+                "com.pulumi:aws": "5.40.0",
+                "com.pulumi:docker": "4.2.0",
+                "com.pulumi:datadog": "4.17.1"
+            }
+        },
+        "csharp": {
+            "namespaces": {
+                "aws_ecs_service": "AwsEcsService",
+                "aws_ecs_service/service": "AwsEcsService.Service",
+                "aws_ecs_service/datadog": "AwsEcsService.Datadog",
+                "aws_ecs_service/blue_green": "AwsEcsService.BlueGreen"
+            },
+            "packageReferences": {
+                "Pulumi": "3.*",
+                "Pulumi.Aws": "5.*",
+                "Pulumi.Datadog": "4.*",
+                "Pulumi.Docker": "4.*"
+            }
+        },
+        "go": {
+            "generateResourceContainerTypes": true,
+            "importBasePath": "github.com/pulumi/pulumi-ipidp/sdk/go/ipidp"
+        },
+        "nodejs": {
+            "dependencies": {
+                "@pulumi/aws": "^5.0.0",
+                "@pulumi/docker": "^4.0.0",
+                "@pulumi/datadog": "^4.0.0"
+            },
+            "devDependencies": {
+                "typescript": "^3.7.0"
+            }
+        },
+        "python": {
+            "requires": {
+                "pulumi": ">=3.0.0,<4.0.0",
+                "pulumi-aws": ">=5.0.0,<6.0.0",
+                "pulumi-docker": ">=4.0.0,<5.0.0",
+                "pulumi-datadog": ">=4.0.0,<5.0.0"
+            }
+        }
+    },
+    "pluginDownloadURL": "https://yyyy.xxxxx.io/artifactory/sp-docker/pulumi-ipidp-provider",
+    "repository": "https://yyyyy.xxxx.com/xxx/pulumi-ipidp"
+}
