@@ -8,18 +8,29 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from ... import _utilities
-# from ...code_deploy import _aws_ecs_service.blue_green.CodeDeploy
-from .ecr_image import EcrImage
+from ...code_deploy import _aws_ecs_service.blue_green.CodeDeploy
+from ...ecr_image import EcrImage
 
 __all__ = ['EcsServiceArgs', 'EcsService']
 
 @pulumi.input_type
 class EcsServiceArgs:
-    def __init__(__self__):
+    def __init__(__self__, *,
+                 additional_environment: Optional[Mapping[str, pulumi.Input[str]]] = None):
         """
         The set of arguments for constructing a EcsService resource.
         """
-        pass
+        if additional_environment is not None:
+            pulumi.set(__self__, "additional_environment", additional_environment)
+
+    @property
+    @pulumi.getter(name="additionalEnvironment")
+    def additional_environment(self) -> Optional[Mapping[str, pulumi.Input[str]]]:
+        return pulumi.get(self, "additional_environment")
+
+    @additional_environment.setter
+    def additional_environment(self, value: Optional[Mapping[str, pulumi.Input[str]]]):
+        pulumi.set(self, "additional_environment", value)
 
 
 class EcsService(pulumi.ComponentResource):
@@ -27,6 +38,7 @@ class EcsService(pulumi.ComponentResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_environment: Optional[Mapping[str, pulumi.Input[str]]] = None,
                  __props__=None):
         """
         Create a EcsService resource with the given unique name, props, and options.
@@ -56,6 +68,7 @@ class EcsService(pulumi.ComponentResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_environment: Optional[Mapping[str, pulumi.Input[str]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -67,6 +80,7 @@ class EcsService(pulumi.ComponentResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = EcsServiceArgs.__new__(EcsServiceArgs)
 
+            __props__.__dict__["additional_environment"] = additional_environment
             __props__.__dict__["code_deploy"] = None
             __props__.__dict__["ecr_image"] = None
         super(EcsService, __self__).__init__(

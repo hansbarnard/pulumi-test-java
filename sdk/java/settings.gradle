@@ -10,5 +10,5 @@ pluginManagement {
   }
 }
 
-rootProject.name = "com.mycompany.ipidp"
+rootProject.name = "com.xxxxx.ipidp"
 include("lib")

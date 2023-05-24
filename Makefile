@@ -12,7 +12,7 @@ SCHEMA_PATH      := ${WORKING_DIR}/schema.json
 
 SRC              := provider/cmd/pulumi-resource-${PACK}
 JAVA_GEN         := pulumi-java-gen
-JAVA_GEN_VERSION := v0.9.2
+JAVA_GEN_VERSION := v0.9.3
 
 # generate:: gen_go_sdk gen_dotnet_sdk gen_nodejs_sdk gen_python_sdk bin/pulumi-java-gen
 

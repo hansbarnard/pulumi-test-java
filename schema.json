@@ -29,6 +29,14 @@
         "ipidp:aws_ecs_service/service:EcsService": {
             "isComponent": true,
             "inputProperties": {
+              "additionalEnvironment": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "plain": false
+                },
+                "plain": true
+              }
             },
             "requiredInputs": [
             ],
@@ -48,7 +56,7 @@
     },
     "language": {
         "java": {
-            "basePackage": "com.mycompany",
+            "basePackage": "com.xxxxx",
             "packages": {
                 "aws_ecs_service": "awsecsservice",
                 "aws_ecs_service/blue_green": "awsecsservice.bluegreen",
